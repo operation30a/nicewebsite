@@ -1,121 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Porn - Watch</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Video Hub — Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Placeholder YouTube-like homepage (black + red). Add your videos later." />
 </head>
 <body>
-    <div class="container watch-container">
-        <!-- Header with Logo and Search -->
-        <header class="header">
-            <div class="header-left">
-                <a href="index.html" class="logo">
-                    <i class="fas fa-play-circle"></i>
-                    <span>Porn-Free-Watch</span>
-                </a>
-            </div>
-            
-            <div class="header-center">
-                <div class="search-container">
-                    <input type="text" class="search-input" placeholder="Search videos...">
-                    <button class="search-button">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
-            </div>
-            
-            <div class="header-right">
-                <button class="upload-btn">
-                    <i class="fas fa-upload"></i>
-                    <span>Upload</span>
-                </button>
-                <div class="user-avatar">
-                    <i class="fas fa-user-circle"></i>
-                </div>
-            </div>
-            
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </header>
-        
-        <!-- Main Watch Content -->
-        <main class="watch-main">
-            <div class="video-player-section">
-                <!-- Video Player -->
-                <div class="video-player-container">
-                    <div class="video-wrapper">
-                        <video id="mainVideoPlayer" controls>
-                            <source src="" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    
-                    <!-- Video Info -->
-                    <div class="video-info">
-                        <h1 id="videoTitle">Loading...</h1>
-                        
-                        <div class="video-stats">
-                            <div class="stats-left">
-                                <span id="videoViews" class="views-count">...</span>
-                                <span class="dot-separator">•</span>
-                                <span id="uploadDate" class="upload-date">...</span>
-                            </div>
-                            <div class="stats-right">
-                                <button class="action-btn like-btn">
-                                    <i class="fas fa-thumbs-up"></i>
-                                    <span id="likeCount">0</span>
-                                </button>
-                                <button class="action-btn dislike-btn">
-                                    <i class="fas fa-thumbs-down"></i>
-                                    <span id="dislikeCount">0</span>
-                                </button>
-                                <button class="action-btn share-btn">
-                                    <i class="fas fa-share"></i>
-                                    <span>Share</span>
-                                </button>
-                                <button class="action-btn save-btn">
-                                    <i class="fas fa-save"></i>
-                                    <span>Save</span>
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <!-- Channel Info -->
-                        <div class="channel-info">
-                            <div class="channel-avatar">
-                                <i class="fas fa-user-circle"></i>
-                            </div>
-                            <div class="channel-details">
-                                <div class="channel-name" id="channelName"></div>
-                                <div class="subscribers" id="subscriberCount"></div>
-                            </div>
-                            <button class="subscribe-btn">Subscribe</button>
-                        </div>
-                        
-                        <!-- Video Description -->
-                        <div class="video-description">
-                            <div class="description-text" id="videoDescription"></div>
-                            <button class="show-more-btn">Show more</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Recommended Videos Sidebar -->
-            <div class="recommended-sidebar">
-                <h3 class="sidebar-title">Recommended Videos</h3>
-                <div class="recommended-list" id="recommendedVideos">
-                    <!-- Recommended videos will be loaded dynamically -->
-                </div>
-            </div>
-        </main>
+  <header class="topbar">
+    <div class="left">
+      <button id="menuToggle" class="icon-btn" aria-label="Menu">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"><path d="M3 6h18M3 12h18M3 18h18" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <a class="logo" href="/">VID<span class="logo-accent">E</span>O</a>
     </div>
-    
-    <script src="script.js"></script>
+
+    <div class="search">
+      <input id="searchInput" type="search" placeholder="Search videos..." />
+      <button id="searchBtn" class="search-btn" aria-label="Search">Search</button>
+    </div>
+
+    <div class="right">
+      <button class="icon-btn" aria-label="Upload">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"><path d="M12 3v12" stroke-width="2" stroke-linecap="round"/><path d="M5 10l7-7 7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 21H3" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <div class="avatar" title="Your account">JD</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <aside class="sidebar" id="sidebar">
+      <nav>
+        <a class="side-link active"><span class="side-icon">🏠</span>Home</a>
+        <a class="side-link"><span class="side-icon">🔥</span>Trending</a>
+        <a class="side-link"><span class="side-icon">📺</span>Subscriptions</a>
+        <a class="side-link"><span class="side-icon">📚</span>Library</a>
+        <hr />
+        <a class="side-link"><span class="side-icon">⚙️</span>Settings</a>
+      </nav>
+    </aside>
+
+    <section class="content">
+      <div class="hero">
+        <h1>Explore videos</h1>
+        <p class="muted">This is a placeholder homepage — add your real videos later. Click any thumbnail to open <code>/watch/{id}</code>.</p>
+      </div>
+
+      <section id="videoGrid" class="grid">
+        <!-- Cards generated by script.js -->
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Video Hub • Black + Red theme • Placeholder thumbnails</small>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
