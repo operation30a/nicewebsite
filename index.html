@@ -60,6 +60,7 @@ body {
     border-radius: var(--rounded);
     overflow: hidden;
     position: relative;
+    cursor: pointer;
 }
 
 .video_item:hover {
@@ -169,43 +170,23 @@ body {
     </div>
 </section>
 
-<!-- Video 2 -->
-<section class="video_item">
-    <div class="duration text-white">
-        <span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock-play" width="14" height="14" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <path d="M12 7v5l2 2"></path>
-                <path d="M17 22l5 -3l-5 -3z"></path>
-                <path d="M13.017 20.943a9 9 0 1 1 7.831 -7.292"></path>
-            </svg> 03:45
-        </span>
-    </div>
-
-    <div>
-        <a href="watch/watch.html?id=16000002&src=https://mxdrop.to/e/example2">
-            <div class="">
-                <video width="100%" preload="none" class="video-splash-mov" poster="https://via.placeholder.com/266x149/111/fff?text=Video+2" muted loop>
-                    <source src="https://cdn.freefile.io/thumbnails/2025/11/26/34bd68fd-1670-499d-8503-1ffc4ea27773.mp4" type="video/mp4">
-                </video>
-            </div>
-        </a>
-
-        <div class="info d-flex" style="margin-top: -5px;">
-            <div class="p-1 d-none">
-                <img src="/logo/logo.png" alt="" height="20px" class="rounded-pill">
-            </div>
-            <div>
-                <a href="#">creator_two</a>
-                <p>1 week ago · Chaturbate · 120 views</p>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- Add more video_item sections below as needed -->
 
 </div>
+
+<script>
+// Hover to play videos
+document.querySelectorAll('.video_item video').forEach(video => {
+    video.pause(); // pause by default
+    video.parentElement.parentElement.addEventListener('mouseenter', () => {
+        video.play();
+    });
+    video.parentElement.parentElement.addEventListener('mouseleave', () => {
+        video.pause();
+        video.currentTime = 0; // reset to start
+    });
+});
+</script>
 
 </body>
 </html>
