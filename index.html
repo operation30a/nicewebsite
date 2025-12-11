@@ -6,87 +6,123 @@
 <title>Video Hub - Home</title>
 <link rel="stylesheet" href="style.css">
 <style>
+:root {
+    --theme-color: #ff0000;
+    --rounded: 10px;
+    --black: #000;
+    --white: #fff;
+    --inter: "Inter", sans-serif;
+}
+
 body {
     margin:0;
-    font-family: Arial, sans-serif;
-    background: #000;
-    color: #fff;
+    font-family: var(--inter);
+    background-color: var(--black);
+    color: var(--white);
 }
+
 .navbar {
     width: 100%;
     height: 60px;
     background: #111;
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid var(--theme-color);
     display: flex;
     align-items: center;
     padding: 0 15px;
     gap: 15px;
 }
+
 .navbar a {
     font-size: 28px;
-    color: red;
+    color: var(--theme-color);
     text-decoration: none;
 }
+
 .navbar input {
     flex: 1;
     height: 35px;
-    border: 1px solid red;
+    border: 1px solid var(--theme-color);
     background: #000;
-    color: white;
+    color: var(--white);
     padding: 5px 10px;
-    border-radius: 6px;
+    border-radius: var(--rounded);
 }
+
 .video_grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    grid-template-columns: repeat(auto-fill,minmax(266px,1fr));
     gap: 15px;
     padding: 20px;
 }
+
 .video_item {
     background: #111;
-    border-radius: 10px;
+    border-radius: var(--rounded);
     overflow: hidden;
     position: relative;
 }
+
 .video_item:hover {
     background: #222;
 }
+
 .video_item .duration {
     position: absolute;
     top: 5px;
     right: 5px;
     background: rgba(0,0,0,0.6);
     padding: 2px 6px;
-    border-radius: 6px;
+    border-radius: var(--rounded);
     font-size: 12px;
     display: flex;
     align-items: center;
     gap: 3px;
 }
-.video_item video {
+
+.video_item video,
+.video-splash-mov {
     width: 100%;
-    display: block;
+    height: 149px;
+    object-fit: fill;
+    border-radius: var(--rounded);
 }
+
 .info {
     padding: 8px 10px;
 }
+
 .info a {
-    color: #fff;
+    color: var(--white);
     font-weight: 600;
     text-decoration: none;
 }
+
 .info p {
     margin: 2px 0 0 0;
     font-size: 12px;
     color: #ccc;
 }
+
 .d-flex {
     display: flex;
     align-items: center;
     gap: 5px;
 }
+
 .rounded-pill {
     border-radius: 50%;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--theme-color);
+    border-radius: 5px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 5px;
 }
 </style>
 </head>
@@ -149,7 +185,7 @@ body {
     <div>
         <a href="watch/watch.html?id=16000002&src=https://mxdrop.to/e/example2">
             <div class="">
-                <video width="100%" preload="none" class="video-splash-mov" poster="https://via.placeholder.com/320x180/111/fff?text=Video+2" muted loop>
+                <video width="100%" preload="none" class="video-splash-mov" poster="https://via.placeholder.com/266x149/111/fff?text=Video+2" muted loop>
                     <source src="https://cdn.freefile.io/thumbnails/2025/11/26/34bd68fd-1670-499d-8503-1ffc4ea27773.mp4" type="video/mp4">
                 </video>
             </div>
@@ -167,39 +203,7 @@ body {
     </div>
 </section>
 
-<!-- Video 3 -->
-<section class="video_item">
-    <div class="duration text-white">
-        <span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock-play" width="14" height="14" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <path d="M12 7v5l2 2"></path>
-                <path d="M17 22l5 -3l-5 -3z"></path>
-                <path d="M13.017 20.943a9 9 0 1 1 7.831 -7.292"></path>
-            </svg> 05:12
-        </span>
-    </div>
-
-    <div>
-        <a href="watch/watch.html?id=16000003&src=https://mxdrop.to/e/example3">
-            <div class="">
-                <video width="100%" preload="none" class="video-splash-mov" poster="https://via.placeholder.com/320x180/111/fff?text=Video+3" muted loop>
-                    <source src="https://cdn.freefile.io/thumbnails/2025/11/26/34bd68fd-1670-499d-8503-1ffc4ea27773.mp4" type="video/mp4">
-                </video>
-            </div>
-        </a>
-
-        <div class="info d-flex" style="margin-top: -5px;">
-            <div class="p-1 d-none">
-                <img src="/logo/logo.png" alt="" height="20px" class="rounded-pill">
-            </div>
-            <div>
-                <a href="#">creator_three</a>
-                <p>3 days ago · Chaturbate · 87 views</p>
-            </div>
-        </div>
-    </div>
-</section>
+<!-- Add more video_item sections below as needed -->
 
 </div>
 
