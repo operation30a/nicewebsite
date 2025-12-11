@@ -12,7 +12,6 @@ body {
     background: #000;
     color: #fff;
 }
-
 .navbar {
     width: 100%;
     height: 60px;
@@ -23,13 +22,11 @@ body {
     padding: 0 15px;
     gap: 15px;
 }
-
 .navbar a {
     font-size: 28px;
     color: red;
     text-decoration: none;
 }
-
 .navbar input {
     flex: 1;
     height: 35px;
@@ -39,25 +36,21 @@ body {
     padding: 5px 10px;
     border-radius: 6px;
 }
-
 .video_grid {
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
     gap: 15px;
     padding: 20px;
 }
-
 .video_item {
     background: #111;
     border-radius: 10px;
     overflow: hidden;
-    transition: 0.2s;
+    position: relative;
 }
-
 .video_item:hover {
     background: #222;
 }
-
 .video_item .duration {
     position: absolute;
     top: 5px;
@@ -70,26 +63,30 @@ body {
     align-items: center;
     gap: 3px;
 }
-
 .video_item video {
     width: 100%;
     display: block;
 }
-
 .info {
     padding: 8px 10px;
 }
-
 .info a {
     color: #fff;
     font-weight: 600;
     text-decoration: none;
 }
-
 .info p {
     margin: 2px 0 0 0;
     font-size: 12px;
     color: #ccc;
+}
+.d-flex {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.rounded-pill {
+    border-radius: 50%;
 }
 </style>
 </head>
@@ -102,80 +99,107 @@ body {
 
 <div class="video_grid">
 
-    <!-- Video 1 -->
-    <section class="video_item">
-        <div class="duration text-white">
-            <span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock-play" width="14" height="14" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <path d="M12 7v5l2 2"></path>
-                    <path d="M17 22l5 -3l-5 -3z"></path>
-                    <path d="M13.017 20.943a9 9 0 1 1 7.831 -7.292"></path>
-                </svg> 02:19
-            </span>
-        </div>
+<!-- Video 1 -->
+<section class="video_item">
+    <div class="duration text-white">
+        <span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock-play" width="14" height="14" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M12 7v5l2 2"></path>
+                <path d="M17 22l5 -3l-5 -3z"></path>
+                <path d="M13.017 20.943a9 9 0 1 1 7.831 -7.292"></path>
+            </svg> 02:19
+        </span>
+    </div>
 
+    <div>
         <a href="watch/watch.html?id=16000001&src=https://mxdrop.to/e/jdkgdvmnfjjjrm">
-            <video width="100%" preload="none" class="video-splash-mov" poster="https://cdn.freefile.io/thumbnails/2025/11/26/34bd68fd-1670-499d-8503-1ffc4ea27773.jpg" muted loop>
-                <source src="https://cdn.freefile.io/thumbnails/2025/11/26/34bd68fd-1670-499d-8503-1ffc4ea27773.mp4" type="video/mp4">
-            </video>
+            <div class="">
+                <video width="100%" preload="none" class="video-splash-mov" poster="https://cdn.freefile.io/thumbnails/2025/11/26/34bd68fd-1670-499d-8503-1ffc4ea27773.jpg" muted loop>
+                    <source src="https://cdn.freefile.io/thumbnails/2025/11/26/34bd68fd-1670-499d-8503-1ffc4ea27773.mp4" type="video/mp4">
+                </video>
+            </div>
         </a>
 
-        <div class="info">
-            <a href="#">sunshine_______</a>
-            <p>2 weeks ago · Chaturbate · 41 views</p>
+        <div class="info d-flex" style="margin-top: -5px;">
+            <div class="p-1 d-none">
+                <img src="/logo/logo.png" alt="" height="20px" class="rounded-pill">
+            </div>
+            <div>
+                <a href="#">sunshine_______</a>
+                <p>2 weeks ago · Chaturbate · 41 views</p>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Video 2 -->
-    <section class="video_item">
-        <div class="duration text-white">
-            <span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock-play" width="14" height="14" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <path d="M12 7v5l2 2"></path>
-                    <path d="M17 22l5 -3l-5 -3z"></path>
-                    <path d="M13.017 20.943a9 9 0 1 1 7.831 -7.292"></path>
-                </svg> 03:45
-            </span>
-        </div>
+<!-- Video 2 -->
+<section class="video_item">
+    <div class="duration text-white">
+        <span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock-play" width="14" height="14" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M12 7v5l2 2"></path>
+                <path d="M17 22l5 -3l-5 -3z"></path>
+                <path d="M13.017 20.943a9 9 0 1 1 7.831 -7.292"></path>
+            </svg> 03:45
+        </span>
+    </div>
 
+    <div>
         <a href="watch/watch.html?id=16000002&src=https://mxdrop.to/e/example2">
-            <video width="100%" preload="none" class="video-splash-mov" poster="https://via.placeholder.com/320x180/111/fff?text=Video+2" muted loop>
-                <source src="https://cdn.freefile.io/thumbnails/2025/11/26/34bd68fd-1670-499d-8503-1ffc4ea27773.mp4" type="video/mp4">
-            </video>
+            <div class="">
+                <video width="100%" preload="none" class="video-splash-mov" poster="https://via.placeholder.com/320x180/111/fff?text=Video+2" muted loop>
+                    <source src="https://cdn.freefile.io/thumbnails/2025/11/26/34bd68fd-1670-499d-8503-1ffc4ea27773.mp4" type="video/mp4">
+                </video>
+            </div>
         </a>
 
-        <div class="info">
-            <a href="#">creator_two</a>
-            <p>1 week ago · Chaturbate · 120 views</p>
+        <div class="info d-flex" style="margin-top: -5px;">
+            <div class="p-1 d-none">
+                <img src="/logo/logo.png" alt="" height="20px" class="rounded-pill">
+            </div>
+            <div>
+                <a href="#">creator_two</a>
+                <p>1 week ago · Chaturbate · 120 views</p>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Video 3 -->
-    <section class="video_item">
-        <div class="duration text-white">
-            <span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock-play" width="14" height="14" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <path d="M12 7v5l2 2"></path>
-                    <path d="M17 22l5 -3l-5 -3z"></path>
-                    <path d="M13.017 20.943a9 9 0 1 1 7.831 -7.292"></path>
-                </svg> 05:12
-            </span>
-        </div>
+<!-- Video 3 -->
+<section class="video_item">
+    <div class="duration text-white">
+        <span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock-play" width="14" height="14" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M12 7v5l2 2"></path>
+                <path d="M17 22l5 -3l-5 -3z"></path>
+                <path d="M13.017 20.943a9 9 0 1 1 7.831 -7.292"></path>
+            </svg> 05:12
+        </span>
+    </div>
 
+    <div>
         <a href="watch/watch.html?id=16000003&src=https://mxdrop.to/e/example3">
-            <video width="100%" preload="none" class="video-splash-mov" poster="https://via.placeholder.com/320x180/111/fff?text=Video+3" muted loop>
-                <source src="https://cdn.freefile.io/thumbnails/2025/11/26/34bd68fd-1670-499d-8503-1ffc4ea27773.mp4" type="video/mp4">
-            </video>
+            <div class="">
+                <video width="100%" preload="none" class="video-splash-mov" poster="https://via.placeholder.com/320x180/111/fff?text=Video+3" muted loop>
+                    <source src="https://cdn.freefile.io/thumbnails/2025/11/26/34bd68fd-1670-499d-8503-1ffc4ea27773.mp4" type="video/mp4">
+                </video>
+            </div>
         </a>
 
-        <div class="info">
-            <a href="#">creator_three</a>
-            <p>3 days ago · Chaturbate · 87 views</p>
+        <div class="info d-flex" style="margin-top: -5px;">
+            <div class="p-1 d-none">
+                <img src="/logo/logo.png" alt="" height="20px" class="rounded-pill">
+            </div>
+            <div>
+                <a href="#">creator_three</a>
+                <p>3 days ago · Chaturbate · 87 views</p>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
 </div>
 
