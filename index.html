@@ -1,62 +1,183 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Video Hub — Home</title>
-  <link rel="stylesheet" href="style.css" />
-  <meta name="description" content="Placeholder YouTube-like homepage (black + red). Add your videos later." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Hub - Home</title>
+<link rel="stylesheet" href="style.css">
+<style>
+body {
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: #000;
+    color: #fff;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    background: #111;
+    border-bottom: 2px solid red;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    gap: 15px;
+}
+
+.navbar a {
+    font-size: 28px;
+    color: red;
+    text-decoration: none;
+}
+
+.navbar input {
+    flex: 1;
+    height: 35px;
+    border: 1px solid red;
+    background: #000;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 6px;
+}
+
+.video_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.video_item {
+    background: #111;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.video_item:hover {
+    background: #222;
+}
+
+.video_item .duration {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: rgba(0,0,0,0.6);
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.video_item video {
+    width: 100%;
+    display: block;
+}
+
+.info {
+    padding: 8px 10px;
+}
+
+.info a {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.info p {
+    margin: 2px 0 0 0;
+    font-size: 12px;
+    color: #ccc;
+}
+</style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="left">
-      <button id="menuToggle" class="icon-btn" aria-label="Menu">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"><path d="M3 6h18M3 12h18M3 18h18" stroke-width="2" stroke-linecap="round"/></svg>
-      </button>
-      <a class="logo" href="/">VID<span class="logo-accent">E</span>O</a>
-    </div>
 
-    <div class="search">
-      <input id="searchInput" type="search" placeholder="Search videos..." />
-      <button id="searchBtn" class="search-btn" aria-label="Search">Search</button>
-    </div>
+<div class="navbar">
+    <a href="/">🎬</a>
+    <input type="text" placeholder="Search videos...">
+</div>
 
-    <div class="right">
-      <button class="icon-btn" aria-label="Upload">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"><path d="M12 3v12" stroke-width="2" stroke-linecap="round"/><path d="M5 10l7-7 7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 21H3" stroke-width="2" stroke-linecap="round"/></svg>
-      </button>
-      <div class="avatar" title="Your account">JD</div>
-    </div>
-  </header>
+<div class="video_grid">
 
-  <main class="container">
-    <aside class="sidebar" id="sidebar">
-      <nav>
-        <a class="side-link active"><span class="side-icon">🏠</span>Home</a>
-        <a class="side-link"><span class="side-icon">🔥</span>Trending</a>
-        <a class="side-link"><span class="side-icon">📺</span>Subscriptions</a>
-        <a class="side-link"><span class="side-icon">📚</span>Library</a>
-        <hr />
-        <a class="side-link"><span class="side-icon">⚙️</span>Settings</a>
-      </nav>
-    </aside>
+    <!-- Video 1 -->
+    <section class="video_item">
+        <div class="duration text-white">
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock-play" width="14" height="14" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M12 7v5l2 2"></path>
+                    <path d="M17 22l5 -3l-5 -3z"></path>
+                    <path d="M13.017 20.943a9 9 0 1 1 7.831 -7.292"></path>
+                </svg> 02:19
+            </span>
+        </div>
 
-    <section class="content">
-      <div class="hero">
-        <h1>Explore videos</h1>
-        <p class="muted">This is a placeholder homepage — add your real videos later. Click any thumbnail to open <code>/watch/{id}</code>.</p>
-      </div>
+        <a href="watch/watch.html?id=16000001&src=https://mxdrop.to/e/jdkgdvmnfjjjrm">
+            <video width="100%" preload="none" class="video-splash-mov" poster="https://cdn.freefile.io/thumbnails/2025/11/26/34bd68fd-1670-499d-8503-1ffc4ea27773.jpg" muted loop>
+                <source src="https://cdn.freefile.io/thumbnails/2025/11/26/34bd68fd-1670-499d-8503-1ffc4ea27773.mp4" type="video/mp4">
+            </video>
+        </a>
 
-      <section id="videoGrid" class="grid">
-        <!-- Cards generated by script.js -->
-      </section>
+        <div class="info">
+            <a href="#">sunshine_______</a>
+            <p>2 weeks ago · Chaturbate · 41 views</p>
+        </div>
     </section>
-  </main>
 
-  <footer class="footer">
-    <small>Video Hub • Black + Red theme • Placeholder thumbnails</small>
-  </footer>
+    <!-- Video 2 -->
+    <section class="video_item">
+        <div class="duration text-white">
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock-play" width="14" height="14" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M12 7v5l2 2"></path>
+                    <path d="M17 22l5 -3l-5 -3z"></path>
+                    <path d="M13.017 20.943a9 9 0 1 1 7.831 -7.292"></path>
+                </svg> 03:45
+            </span>
+        </div>
 
-  <script src="script.js"></script>
+        <a href="watch/watch.html?id=16000002&src=https://mxdrop.to/e/example2">
+            <video width="100%" preload="none" class="video-splash-mov" poster="https://via.placeholder.com/320x180/111/fff?text=Video+2" muted loop>
+                <source src="https://cdn.freefile.io/thumbnails/2025/11/26/34bd68fd-1670-499d-8503-1ffc4ea27773.mp4" type="video/mp4">
+            </video>
+        </a>
+
+        <div class="info">
+            <a href="#">creator_two</a>
+            <p>1 week ago · Chaturbate · 120 views</p>
+        </div>
+    </section>
+
+    <!-- Video 3 -->
+    <section class="video_item">
+        <div class="duration text-white">
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock-play" width="14" height="14" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M12 7v5l2 2"></path>
+                    <path d="M17 22l5 -3l-5 -3z"></path>
+                    <path d="M13.017 20.943a9 9 0 1 1 7.831 -7.292"></path>
+                </svg> 05:12
+            </span>
+        </div>
+
+        <a href="watch/watch.html?id=16000003&src=https://mxdrop.to/e/example3">
+            <video width="100%" preload="none" class="video-splash-mov" poster="https://via.placeholder.com/320x180/111/fff?text=Video+3" muted loop>
+                <source src="https://cdn.freefile.io/thumbnails/2025/11/26/34bd68fd-1670-499d-8503-1ffc4ea27773.mp4" type="video/mp4">
+            </video>
+        </a>
+
+        <div class="info">
+            <a href="#">creator_three</a>
+            <p>3 days ago · Chaturbate · 87 views</p>
+        </div>
+    </section>
+
+</div>
+
 </body>
 </html>
